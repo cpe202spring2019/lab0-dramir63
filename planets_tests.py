@@ -13,9 +13,9 @@ class Test_planets(unittest.TestCase):
         self.assertEqual(expected_out, student_output.getvalue().strip())
 
     def test_02(self):
-        sys.stdin = io.StringIO("120")
+        sys.stdin = io.StringIO("10")
         sys.stdout = student_output = io.StringIO()
-        expected_out = "What do you weigh on earth? \nOn Mars you would weigh 45.6 pounds.\nOn Jupiter you would weigh 280.8 pounds."
+        expected_out = "What do you weigh on earth? \nOn Mars you would weigh 3.8 pounds.\nOn Jupiter you would weigh 23.4 pounds."
         weight_on_planets()
         self.assertEqual(expected_out, student_output.getvalue().strip())
 
@@ -25,6 +25,11 @@ class Test_planets(unittest.TestCase):
         expected_out = "What do you weigh on earth? \nOn Mars you would weigh 0.0 pounds.\nOn Jupiter you would weigh 0.0 pounds."
         weight_on_planets()
         self.assertEqual(expected_out, student_output.getvalue().strip())
+
+    def test_04(self):
+        sys.stdin = io.StringIO("120")
+        sys.stdout = student_output = io.StringIO()
+        expected_out = "What do you weigh on earth? \nOne Mars you would weigh 45.6 pounds. \nOn Jupiter you would weigh280.8 pounds." 
 
 if __name__ == "__main__":
         unittest.main()
